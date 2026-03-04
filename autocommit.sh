@@ -1,6 +1,13 @@
 #!/bin/bash
-# EP Klipper Backup Script
-cd /home/grasply/printer_data/config
-/usr/bin/git add .
-/usr/bin/git commit -m "EP Automatic backup $(date)"
-/usr/bin/git push origin master
+
+# Navigate to the config directory
+cd ~/printer_data/config
+
+# Add all changes
+git add .
+
+# Commit with a timestamp and the correct machine name (CM)
+git commit -m "CM Automatic backup: $(date +'%a %d %b %Y %H:%M:%S %Z')"
+
+# Push to the new repository on the main branch
+git push origin main
